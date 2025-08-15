@@ -2,17 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Random Quote Generator</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Random Quote Generator</h1>
-  <div class="quote-box">
-    <p class="quote" id="quote">Click the button to get a quote!</p>
-    <p class="author" id="author"></p>
-    <button id="new-quote">New Quote</button>
-  </div>
+  <main class="container">
+    <header>
+      <h1>Random Quote Generator</h1>
+      <p class="sub">Fresh inspirations </p>
+    </header>
+
+    <section class="card" aria-live="polite">
+      <blockquote id="quote" class="quote">Click “New Quote” to get started.</blockquote>
+      <cite id="author" class="author"></cite>
+
+      <div class="actions">
+        <button id="new-quote" class="btn primary" aria-label="Get a new quote">New Quote</button>
+        <button id="copy" class="btn" aria-label="Copy quote to clipboard">Copy</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Tip:</span> Press <kbd>Space</kbd> for a new quote, <kbd>C</kbd> to copy.
+    </footer>
+    <footer class="footer">
+      <span>Made by Perfee </span>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Copied!</div>
 
   <script src="script.js"></script>
 </body>

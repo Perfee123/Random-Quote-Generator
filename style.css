@@ -1,42 +1,146 @@
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #6a11cb, #2575fc);
-  color: white;
-  text-align: center;
-  padding: 50px;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  background: linear-gradient(135deg, #0f1220, #171b2e);
+  color: #e7ecf3;
+  display: grid;
+  place-items: center;
+  padding: 24px;
 }
 
-.quote-box {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 500px;
-  margin: auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.container{
+  width: 100%;
+  max-width: 760px;
+  display: grid;
+  gap: 18px;
 }
 
-.quote {
-  font-size: 1.5em;
-  margin-bottom: 10px;
+header h1{
+  margin: 0 0 6px 0;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.2px;
 }
 
-.author {
-  font-size: 1.1em;
-  color: #ffd700;
+.sub{
+  margin: 0;
+  color: #a9b1c3;
+  font-size: 0.95rem;
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1em;
-  border: none;
-  background: #ffd700;
-  color: black;
-  border-radius: 5px;
+.card{
+  background: #161a2a;
+  border-radius: 18px;
+  padding: clamp(18px, 3vw, 28px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+
+.quote{
+  margin: 0 0 10px 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+  line-height: 1.4;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: fadeIn 300ms ease forwards;
+}
+
+.author{
+  display: block;
+  color: #a9b1c3;
+  font-style: normal;
+  font-size: 0.98rem;
+  margin-top: 4px;
+}
+
+.actions{
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn{
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  color: #e7ecf3;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: transform 80ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-button:hover {
-  background: #ffcc00;
+.btn:hover{
+  background: rgba(255,255,255,0.06);
+}
+
+.btn:active{
+  transform: translateY(1px);
+}
+
+.btn.primary{
+  background: #8aa9ff;
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn.primary:hover{ background: #5e86ff; }
+
+.btn.link{ text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+
+.btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(138,169,255,0.35);
+}
+
+.footer{
+  color: #a9b1c3;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+kbd{
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.85em;
+}
+
+.toast{
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(12px);
+  background: #161a2a;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #e7ecf3;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.toast.show{
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@keyframes fadeIn{
+  to { opacity: 1; transform: translateY(0); }
 }
