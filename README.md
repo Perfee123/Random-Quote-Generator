@@ -14,6 +14,8 @@ This project displays random inspirational quotes with a modern user interface a
 - ⌨ **Keyboard Shortcuts**
 - ⚡ **Lightweight & Fast** 
 
+### Live site - https://perfee123.github.io/Random-Quote-Generator/
+
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/perfee123/Random-Quote-Generator.git
